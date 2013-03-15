@@ -1,0 +1,86 @@
+<html>
+    <head>
+    	<title>There's no time like now</title>
+    	 <link href="/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>    
+    	<h1>THERE'S NO TIME LIKE <font color="#FFBF00">NOW</font></h1>
+    	<div>
+    		<img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo"/>
+    	</div>
+    	<br/>
+    	<p>
+    		This is what happens when you don't want to make a blog, but kind of do.
+    		<br>And when you want to make a website, and kind of can.
+    		<br>
+    	</p>
+    	<% if (user) { %>
+      	<div id="form">
+      	  <input id="title" type="text" placeholder="Enter title here">
+      	  <textarea id="post" placeholder="Remember, be nice!"></textarea>
+      	  <button id="submit">submit</button>
+      	</div>
+      <% } %>
+    	<div id="posts">
+    	  <ul>
+    	  <% for(var i=0; i<posts.length; i++) {%>
+          <li id="post_<%= posts[i]._id %>">
+            <a href="/post/<%= posts[i]._id %>"><%= posts[i].title %></a>
+            <% if (user) { %>
+              <span class="delete" data-id="<%= posts[i]._id %>">&nbsp;&times;</span>
+            <% } %>
+          </li>
+        <% } %>
+        </ul>
+    	</div>
+    	<div id="side">
+        	<ul id="nav">
+	        	<li><a HREF="/about">About</a></li>
+	        	<% if (!user) { %>
+	        	  <li><a HREF="/login">Log in</a></li>
+	        	<% } else { %>
+	        	  <li><a HREF="/logout">Log out</a></li>
+	        	<% } %>
+	        	<li><a HREF="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!">Contact</a></li>
+        	</ul>
+    	</div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/autoresize.jquery.js"></script>
+<script type="text/javascript" charset="utf-8">
+  jQuery(document).ready(function($){    
+    $(".delete").on('click', function(){
+      
+      if (!confirm("Are you sure you want to delete this?")) return;
+      
+      var _id = $(this).attr("data-id");
+      $.ajax({
+        type: "DELETE",
+        url: "/post/"+_id,
+        success: function(data) {
+          $("#post_"+_id).remove();
+        },
+      });
+    });
+
+    $('textarea').autoResize();
+    $("#submit").on('click', function(){
+      var title = $("#title");
+      var post = $("#post");
+      var posts = $("#posts");
+      if (title.val() == "") return alert("Hey, you are missing a title, dude!");
+      if (post.val() == "") return alert("Sorry dude, where the hell is your content?");
+      $.ajax({
+        type: "POST",
+        url: "/new",
+        data: {title: title.val(), post: post.val()},
+        success: function(data) {
+          post.val("");
+          title.val("");
+          posts.prepend('<li><a href="/post/'+data._id+'">'+data.title+'</a></li>');
+        },
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "virginialonso",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": ">=3.0.6",
+    "redis": ">=0.8.2",
+    "connect-redis": ">=1.4.5",
+    "ejs": ">=0.0.0",
+    "async": ">=0.0.0",
+    "mongoose": ">=3.5.4",
+    "ejs-locals": ">=0.2.6",
+    "passport": ">=0.0.0",
+    "passport-local": ">=0.0.0",
+    "connect-flash": ">=0.0.0"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "scripts": {
+    "start": "app.js"
+  }
+}

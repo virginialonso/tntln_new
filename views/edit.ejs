@@ -1,0 +1,57 @@
+<html>
+    <head>
+    	<title>There's no time like now</title>
+    	 <link href="/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>    
+      <p><div><a href="notimelikenow.html"><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1" href="notimelikenow.html"></div>
+    <font color="#424242">TNTL</font><font color="#FFBF00">N</font></a></p>
+    
+    <div id="form">
+  	  <input id="title" type="text" placeholder="Enter title here" value="<%= data.title %>">
+  	  <textarea id="post" placeholder="Remember, be nice!"><%= data.post %></textarea>
+  	  <button id="submit">save</button>
+  	</div>
+  	<div class="preview">Have a look at <a href="/post/<%= data._id %>">http://virginialonso.com/post/<%= data._id %></a></div>
+    
+    <div align="center"> ( Go <a style="color: #FFBF00" HREF="/">back </a>) </div>
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="/autoresize.jquery.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    jQuery(document).ready(function($){
+      $(".delete").on('click', function(){
+      
+        if (!confirm("Are you sure you want to delete this?")) return;
+      
+        $.ajax({
+          type: "DELETE",
+          url: "/post/<%= data._id %>",
+          success: function(data) {
+            window.location = "/";
+          },
+        });
+      });
+      
+      
+      $('textarea').autoResize();
+      $("#submit").on('click', function(){
+        var title = $("#title");
+        var post = $("#post");
+        var posts = $("#posts");
+        if (title.val() == "") return alert("Hey, you are missing a title, dude!");
+        if (post.val() == "") return alert("Sorry dude, where the hell is your content?");
+        $.ajax({
+          type: "POST",
+          url: "/post/<%= data._id %>",
+          data: {title: title.val(), post: post.val()},
+          success: function(data) {
+            alert("Yuppy, saved!");
+          },
+        });
+      }); 
+    });
+    </script>>
+    </body>
+</html>

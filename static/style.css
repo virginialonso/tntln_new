@@ -1,0 +1,87 @@
+body {
+	background: url(http://24.media.tumblr.com/tumblr_m5zzd0IOjm1qdkopqo1_500.gif);
+	background-attachment: fixed;
+	color: #424242;
+	font: 18px "Avenir Book", "sans-serif";
+	text-align: center;
+}
+a {
+	text-decoration: none;
+}
+.logo {
+	-moz-border-radius: 1000px;
+	-webkit-border-radius: 1000px;
+	border-radius: 1000px;
+	border: solid 2px #FFBF00; 
+	width: 200px;
+	height: 200px;
+	opacity: 0.85;
+	filter: alpha(opacity=85); 
+}
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+#nav li a {
+  color: #FFBF00;
+}
+li:before,
+li:after {
+  content: "\2022";
+  margin: 0 5px;
+}
+#form {
+  background: #fff;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  padding: 20px 0;
+}
+#title {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: 25px;
+  width: 80%;
+  background: #eee;
+  border: 0px;
+  color: #FFBF00;
+}
+#post {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 1px solid #efefef;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+}
+a {
+  color: #FFBF00;
+}
+#submit {
+  margin-top: 15px;
+}
+.logo1 {
+  -moz-border-radius: 1000px/1000px;
+  -webkit-border-radius: 50px 50px;
+  border-radius: 1000px/1000px;
+  border:solid 2px #FFBF00; 
+  width:20px;
+  height:20px;
+  opacity:0.8;
+  filter:alpha(opacity=40); 
+}
+.delete {
+  color: red;
+  cursor: pointer;
+}
+
+.preview {
+  margin: 16px 0;
+  text-transform: uppercase;
+  font-size: 10px;
+}
