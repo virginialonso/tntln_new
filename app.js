@@ -11,6 +11,7 @@ var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
 var Post = require('./models').Post();
 var User = require('./models').User();
+var moment = require('moment');
 
 
 var store;
@@ -102,8 +103,15 @@ app.get("/post/:id", loadUser, function(req, res) {
   var id = req.params.id;
   
   Post.findById(req.params.id, function(err, doc) {
-    res.locals.data = doc;
+    res.locals.data = {
+      _id: doc._id,
+      title: doc.title,
+      post: doc.post,
+      last_edit: doc.last_edit,
+      fromNow: moment(new Date(doc.last_edit)).fromNow()
+    };
     if (!doc) return res.redirect('/');
+    
     res.render('post');
   });
 });

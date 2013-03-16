@@ -1,12 +1,18 @@
 <html>
     <head>
-    	<title>There's no time like now</title>
-    	 <link href="/style.css" rel="stylesheet" type="text/css"/>
+    	<title><%= data.title %> - Virginia Alonso</title>
+    	<link href="/style.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>    
-      <p><div><a href="notimelikenow.html"><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1" href="notimelikenow.html"></div>
-    <font color="#424242">TNTL</font><font color="#FFBF00">N</font></a></p>
+      <p>
+        <div>
+          <a href="/">
+            <img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1">
+        </div>
+        <font color="#424242">TNTL</font><font color="#FFBF00">N</font>
+          </a>
+     </p>
     
     <h1><%= data.title %>
       <% if (user) { %>
@@ -16,13 +22,19 @@
     <p id="content">
       <%- data.post.replace(/\r\n|\r|\n/g,"<br />") %>
     </p>
+    <p>
+      <abbr title="<%- data.last_edit %>">[<%- data.fromNow %>]</abbr>
+    </p>
     
     
     <div align="center"> ( Go <a style="color: #FFBF00" HREF="/">back </a>) </div>
+
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="/autoresize.jquery.js"></script>
+    <script src="/moment.min.js"></script>
+
     <script type="text/javascript" charset="utf-8">
-    jQuery(document).ready(function($){
+    jQuery(document).ready(function($) {
       $(".delete").on('click', function(){
       
         if (!confirm("Are you sure you want to delete this?")) return;
@@ -35,6 +47,6 @@
         });
       });  
     });
-    </script>>
+    </script>
     </body>
 </html>

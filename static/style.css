@@ -66,9 +66,9 @@ a {
   margin-top: 15px;
 }
 .logo1 {
-  -moz-border-radius: 1000px/1000px;
-  -webkit-border-radius: 50px 50px;
-  border-radius: 1000px/1000px;
+  -moz-border-radius: 1000px;
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
   border:solid 2px #FFBF00; 
   width:20px;
   height:20px;
