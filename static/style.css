@@ -99,3 +99,8 @@ a {
   border-left: 1px solid #ededed;
   border-right: 1px solid #ededed;
 }
+@media (max-width: 1000px) {
+  .bg {
+  display: none;
+  }
+}
