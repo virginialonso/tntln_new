@@ -4,6 +4,10 @@ body {
 	color: #424242;
 	font: 24px "Amatic SC", "Helvetica Neue", "Helvetica";
 	text-align: center;
+  top: 0;
+  right: 25%;
+  position: fixed;
+  width: 50%;
 }
 a {
 	text-decoration: none;
