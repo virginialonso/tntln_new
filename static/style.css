@@ -8,15 +8,18 @@ body {
 a {
 	text-decoration: none;
 }
-.logo {
-	-moz-border-radius: 1000px;
-	-webkit-border-radius: 1000px;
-	border-radius: 1000px;
-	border: solid 2px #FFBF00; 
-	width: 200px;
-	height: 200px;
-	opacity: 0.85;
-	filter: alpha(opacity=85); 
+.logo{
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  border-radius: 1000px;
+  width: 200px;
+  height: 200px;
+  background: url(http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg) -356px 0px;
+  background-size: 300px 223px;
+  border: solid 2px #FFBF00; 
+  opacity: 0.85;
+  filter: alpha(opacity=85); 
+  margin: 0 auto;
 }
 li {
   list-style: none;
