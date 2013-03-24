@@ -16,7 +16,7 @@ var moment = require('moment');
 
 var store;
 if (process.env.REDISTOGO_URL) {
-	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+	var rtg = require("url").parse(process.env.REDISTOGO_URL);
 	store = redis.createClient(rtg.port, rtg.hostname);
 	store.auth(rtg.auth.split(":")[1]);
 } else {
@@ -53,12 +53,9 @@ passport.use(new LocalStrategy(
   function (username, password, done) {
     User.findOne({ username: username }, function (err, user) {
       if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (user.password !== password) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
+      if (!user) { return done(null, false, { message: 'Incorrect username.' }); }
+      if (user.password !== password) { return done(null, false, { message: 'Incorrect password.' }); }
+
       return done(null, user);
     });
   }
@@ -87,12 +84,8 @@ app.get("/flowers", function (req, res) {
 app.get("/login", function (req, res) {
   return res.render("login");
 });
-app.post('/login',
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login' }
-  )
-);
+
+app.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
 
 app.get('/logout', function (req, res) {
   req.logout();
@@ -100,9 +93,10 @@ app.get('/logout', function (req, res) {
 });
 
 app.get("/post/:id", loadUser, function(req, res) {
-  var id = req.params.id;
   
   Post.findById(req.params.id, function(err, doc) {
+    if (!doc) return res.redirect('/');
+
     res.locals.data = {
       _id: doc._id,
       title: doc.title,
@@ -110,7 +104,6 @@ app.get("/post/:id", loadUser, function(req, res) {
       last_edit: doc.last_edit,
       fromNow: moment(new Date(doc.last_edit)).fromNow()
     };
-    if (!doc) return res.redirect('/');
     
     res.render('post');
   });
@@ -118,8 +111,7 @@ app.get("/post/:id", loadUser, function(req, res) {
 
 app.get("/edit/:id", loadUser, function(req, res) {
   if (!req.user) return res.redirect("/");
-  
-  var id = req.params.id;
+
   Post.findById(req.params.id, function(err, doc) {
     res.locals.data = doc;
     if (!doc) return res.redirect('/');
@@ -158,7 +150,7 @@ app.post("/new", loadUser, function(req, res) {
     post: req.body.post
   });
   doc.save(function(err){
-    if (err) res.json(500, {error: "Not saved"});
+    if (err) return res.json(500, {error: "Not saved"});
     
     return res.json(doc);
   });
