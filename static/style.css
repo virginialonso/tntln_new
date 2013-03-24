@@ -100,8 +100,13 @@ a {
   border-left: 1px solid #ededed;
   border-right: 1px solid #ededed;
 }
-#content img {
+#content img, .image {
   max-width: 100%;
+}
+.image {
+  border:solid 2px #FFBF00; 
+  opacity:0.5;
+  filter:alpha(opacity=40); 
 }
 @media (max-width: 1000px) {
   .bg {
