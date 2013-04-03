@@ -8,12 +8,16 @@
     <body>    
     	<h1>THERE'S NO TIME LIKE <font color="#FFBF00">NOW</font></h1>
     	<div class="logo"></div>
-    	<br/>
     	<p>
-    		This is what happens when you don't want to make a blog, but kind of do.
-    		<br>And when you want to make a website, and kind of can. And when you want to make a website, and kind of can. And when you want to make a website, and kind of can.  And when you want to make a website, and kind of can. 
+    	  <br>
+    		Experience is not Permanent
+    		<br>Permanence  is  not  an  Experience
     		<br>
-    	</p>
+    		<br>
+    		<a HREF="/about">About Me</a> | <a HREF="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!"> Your Thoughts</a> | <font size="4">©</font> 2013
+    	  <br>
+    	  <br>
+    	</p>	
     	<% if (user) { %>
       	<div id="form">
       	  <input id="title" type="text" placeholder="Enter title here">
@@ -35,13 +39,11 @@
     	</div>
     	<div id="side">
         	<ul id="nav">
-	        	<li><a HREF="/about">About</a></li>
 	        	<% if (!user) { %>
 	        	  <li><a HREF="/login">Log in</a></li>
 	        	<% } else { %>
 	        	  <li><a HREF="/logout">Log out</a></li>
 	        	<% } %>
-	        	<li><a HREF="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!">Contact</a></li>
         	</ul>
     	</div>
     	<div class="bg"></div>

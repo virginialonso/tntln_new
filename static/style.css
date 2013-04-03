@@ -6,7 +6,7 @@ body {
 	text-align: center;
   top: 0;
   right: 25%;
-  position: fixed;
+  position: absolute;
   width: 50%;
 }
 a {
@@ -24,6 +24,7 @@ a {
   opacity: 0.85;
   filter: alpha(opacity=85); 
   margin: 0 auto;
+  box-shadow: 1px 1px 100px #F2F2F2;
 }
 li {
   list-style: none;
@@ -36,7 +37,7 @@ ul {
 }
 li:before,
 li:after {
-  content: "\2022";
+  content: "·";
   margin: 0 5px;
 }
 #form {
@@ -100,8 +101,8 @@ a {
   height: 100%;
   background: #fff;
   z-index: -1;
-  border-left: 1px solid #ededed;
-  border-right: 1px solid #ededed;
+  border-left: 2px solid #ededed;
+  border-right: 2px solid #ededed;
 }
 @media (max-width: 1000px) {
   .bg {
