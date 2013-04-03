@@ -4,10 +4,7 @@ body {
 	color: #424242;
 	font: 24px "Amatic SC", "Helvetica Neue", "Helvetica";
 	text-align: center;
-  top: 0;
-  right: 25%;
-  position: absolute;
-  width: 50%;
+	margin: 0 27%;	
 }
 a {
 	text-decoration: none;
@@ -104,8 +101,19 @@ a {
   border-left: 2px solid #ededed;
   border-right: 2px solid #ededed;
 }
+#content img, .image {
+  max-width: 100%;
+}
+.image {
+  border:solid 2px #FFBF00; 
+  opacity:0.5;
+  filter:alpha(opacity=40); 
+}
 @media (max-width: 1000px) {
   .bg {
-  display: none;
+    display: none;
+  }
+  body {
+    margin: 0 20%;
   }
 }
