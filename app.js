@@ -78,6 +78,7 @@ app.get("/about", function (req, res) {
 });
 
 app.get("/flowers", function (req, res) {
+  res.locals.user = req.user;
   return res.render("flowers");
 });
 
@@ -162,7 +163,22 @@ app.get('*', loadUser, function(req, res){
 
 var port = process.env.PORT || 1200;
 var server = http.createServer(app).listen(port, function () {
-	console.log("Virginialonso server listening on ", server.address().port, app.settings.env);
+	console.log("Virginialonso server escucha sobre ", server.address().port, app.settings.env);
+});
+var io = require('socket.io').listen(server);
+
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
+io.sockets.on('connection', function (socket) {
+  socket.on('field_touched', function(data) {
+    console.log('field_touched');
+  });
+  socket.on('handcraft', function(data) {
+    socket.broadcast.emit('handcrafted', data);
+  });
 });
 
 

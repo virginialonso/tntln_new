@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +14,31 @@
   <div id="time"></div>
 
   <script src="/d3.v2.min.js"></script>
-  <script src="/countup.js"></script>
+  <script src="/functions.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <script>
-  var line, field, flowers, w, h, d, n, dx, color;
+    // Check if you are her
+    var bing = <% if (user)  { %>true<% } else { %>false<% } %>;
+
+    var virginialonso = io.connect();
+    virginialonso.habla = function(msg, data) { if (bing) this.emit(msg, data); }
+    virginialonso.escucha = function(channel, fun) { if (!bing) this.on(channel, fun); }
+
+    // Listen whether flowers have been touched
+    virginialonso.escucha("handcrafted", function(data){
+      d3.select(d3.selectAll("path")[0][data.i])
+        .datum(data.d)
+        .transition()
+        .delay(10)
+        .duration(1000)
+        .attr('d', handcraft_flower)
+        .style("stroke", "#ccc");
+    })
+    
+  </script>
+
+  <script>
+  var line, field, flowers, w, h, d, n, dx, color, touching;
   
   color = false;
   w = 960;
@@ -47,6 +68,7 @@
           .transition()
           .duration(1000)
           .style("stroke", function(d, i) {
+            // Finding the most beautiful colors
             return random_color(120,250);
         });
         color = true;
@@ -87,43 +109,31 @@
   }
   
   function start_touching(d, i) {
+    if (touching === i) return;
+    touching = i;
     d[0] = random_int(1, 11);
     d[1] = random_int(1, 11);
     if (d[0] == d[1]) d[1]++; // deleting ugly flowers
 
-    flower = d3.select(this);
+    var flower = d3.select(this);
     flower
      .transition()
      .delay(10)
      .duration(1000)
      .attr("d", handcraft_flower)
-     .style("stroke", "#ccc")
+     .style("stroke", "#ccc");
+     
+    virginialonso.habla("handcraft", {d:d,i:i});
   }
   
   function stop_touching(d, i) {
     // Please touch me again
   }
   
-  // Finding the most beautiful colors
-  function random_color(iDarkLuma, iLightLuma) {
-    var sColour, rgb, r, g, b;
-    for (var i=0;i<20;i++) {
-      sColour = ('ffffff' + Math.floor(Math.random() * 0xFFFFFF).toString(16)).substr(-6);
-      rgb = parseInt(sColour, 16);
-      r = (rgb >> 16) & 0xff; g = (rgb >>  8) & 0xff; b = (rgb >>  0) & 0xff;
-      iLuma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
-      if (iLuma > iDarkLuma && iLuma < iLightLuma) return "#"+sColour;
-    }
-    return "#"+sColour;
-  }
-  function random_int (min, max) { return Math.floor(Math.random() * (max - min + 1)) + min;}
-  function gcd(a, b) { var w; while (b !== 0) { w = a % b; a = b; b = w; } return a; }
-  
   function time() {
     var firstflower = 'March 15, 2013 21:42:04 GMT+0000',
         count = new CountUp('Handcrafting flowers since', firstflower, 'time');
   }
-
 
   </script>
 
