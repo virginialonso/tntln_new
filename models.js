@@ -21,9 +21,20 @@ var userSchema = new Schema({
   password: String
 });
 
+var flowerSchema = new Schema ({
+  time: { type: Date, default: Date.now },
+  d: {
+    x: Number,
+    y: Number
+  },
+  i: Number
+});
+
 
 mongoose.model("Post", postSchema);
 mongoose.model("User", userSchema);
+mongoose.model("Flower", flowerSchema);
 
 exports.Post = function () { return this.db.model("Post"); };
 exports.User = function () { return this.db.model("User"); };
+exports.Flower = function () { return this.db.model("Flower"); };

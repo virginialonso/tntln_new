@@ -11,6 +11,7 @@ var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
 var Post = require('./models').Post();
 var User = require('./models').User();
+var Flower = require('./models').Flower();
 var moment = require('moment');
 
 
@@ -80,6 +81,12 @@ app.get("/about", function (req, res) {
 app.get("/flowers", function (req, res) {
   res.locals.user = req.user;
   return res.render("flowers");
+});
+
+app.get("/api/flowers", function(req, res) {
+  Flower.find({}, function(err, docs){
+    res.json(docs);
+  })
 });
 
 app.get("/login", function (req, res) {
@@ -177,6 +184,8 @@ io.sockets.on('connection', function (socket) {
     console.log('field_touched');
   });
   socket.on('handcraft', function(data) {
+    var flower = new Flower({i:data.i, d: {x:data.d[0], y:data.d[1]}});
+    flower.save();
     socket.broadcast.emit('handcrafted', data);
   });
 });
