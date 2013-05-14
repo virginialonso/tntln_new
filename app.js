@@ -100,6 +100,12 @@ app.get('/logout', function (req, res) {
   res.redirect('/');
 });
 
+app.get("/api/posts", function(req, res) {
+  Post.find({}).exec(function(err, docs) {
+    res.json(docs);
+  });
+});
+
 app.get("/post/:id", loadUser, function(req, res) {
   
   Post.findById(req.params.id, function(err, doc) {
