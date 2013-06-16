@@ -63,6 +63,7 @@ CountUp.prototype.calculate=function(id){
 function random_int (min, max) { return Math.floor(Math.random() * (max - min + 1)) + min;}
 function gcd(a, b) { var w; while (b !== 0) { w = a % b; a = b; b = w; } return a; }
 
+
 function random_color(iDarkLuma, iLightLuma) {
   var sColour, rgb, r, g, b;
   for (var i=0;i<20;i++) {

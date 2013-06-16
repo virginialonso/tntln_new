@@ -2,7 +2,7 @@ body {
 	background: transparent url(/BG.png) no-repeat;
 	background-attachment: fixed;
 	color: rgb(41, 41, 41);
-	font: 24px "Amatic SC", "Helvetica Neue", "Helvetica";
+	font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
 	text-align: center;
 	margin: 0 27%;	
 	background-size: 100%;
@@ -20,11 +20,31 @@ a {
   background: url(http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg) -356px 0px;
   background-size: 300px 223px;
   border: solid 10px rgba(255, 191, 0, 0.85);
-  opacity: 0.85;
-  filter: alpha(opacity=85); 
+  opacity: 0.85; 
   margin: 0 auto;
   box-shadow: 1px 2px 4px rgba(24, 24, 24, 0.68);
 }
+header.main {
+background-color: #FFBF00;
+border: 2px dashed #FFFFFF;
+width: 100%;
+opacity: 0.6;
+position: fixed;
+left: 0px;
+top: 0px;
+box-shadow: 0px 0px 2px;
+z-index: 10;
+-webkit-font-smoothing: antialiased;
+font-weight: 600;
+background-position: initial initial;
+background-repeat: initial initial;
+}
+
+.main a {
+    color: #000000;
+    text-decoration: none;
+}
+
 li {
   list-style: none;
 }
@@ -119,4 +139,8 @@ a {
   body {
     margin: 0 20%;
   }
+}
+
+header.active a {
+  text-shadow: 0;
 }
