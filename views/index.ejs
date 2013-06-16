@@ -30,7 +30,7 @@
     	<h5>( <font color="#FFBF00">Musings</font> by Virginia A.N. )</h5>
     		<br>
     		<hr>
-    	  <br>	
+    	  <br>
     	<% if (user) { %>
       	<div id="form">
       	  <input id="title" type="text" placeholder="Enter title here">
@@ -44,12 +44,12 @@
     	  <% for(var i=0; i<posts.length; i++) {%>
           <li id="post_<%= posts[i]._id %>" class="homepost">
             <a href="/post/<%= posts[i]._id %>" class="title"><%= posts[i].title %></a>
+            <% if (user) { %>
+            <span class="delete" data-id="<%= posts[i]._id %>">&nbsp;&times;</span>
+            <% } %>
             <p id="content">
               <%- posts[i].post.replace(/\r\n|\r|\n/g,"<br />") %>
             </p>
-            <% if (user) { %>
-              <span class="delete" data-id="<%= posts[i]._id %>">&nbsp;&times;</span>
-            <% } %>
           </li>
         <% } %>
         </ul>
