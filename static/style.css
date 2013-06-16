@@ -38,12 +38,18 @@ z-index: 10;
 font-weight: 600;
 background-position: initial initial;
 background-repeat: initial initial;
+color:black;
+}
+
+#tntln_logo {
+    margin-top: 80px;
 }
 
 .main a {
     color: #000000;
     text-decoration: none;
 }
+
 
 li {
   list-style: none;
@@ -54,10 +60,11 @@ ul {
 #nav li a {
   color: #FFBF00;
 }
-li:before,
-li:after {
+li a.title:before,
+li a.title:after {
   content: "·";
   margin: 0 5px;
+  color: #666;
 }
 #form {
   background: #fff;
@@ -143,4 +150,15 @@ a {
 
 header.active a {
   text-shadow: 0;
+}
+
+.homepost {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.tntl {
+   color: #424242;
+}
+.n {
+    color: #FFBF00;
 }

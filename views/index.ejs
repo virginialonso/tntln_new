@@ -6,9 +6,9 @@
     	 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
        <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>    
        <script type="text/javascript" src="textExcerpts.js"></script>
-       </head>
-       <body>   
-      <header class="main" style="color:black"> 
+    </head>
+    <body>
+      <header class="main">
         <table align="center">
           <tr>
             <td style="padding:10px; font-size: 20px"><a href="/about">Introducing Virginia</a></td>
@@ -17,11 +17,16 @@
             <td style="padding:10px; font-size: 20px"><a href="http://about.me/virginialonso">About.Me</td>         
           </tr>
         </table>
-      </header> 
-      <p style="color:white; font-size:30px">A</p>
-      <p><a href="notimelikenow.html"><div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
-      <font color="#424242">TNTL</font><font color="#FFBF00">N</font></a></p>
-    	<h1 style="font-size:80px">THERE'S NO TIME LIKE <font color="#FFBF00">NOW</font>.</h1>
+      </header>
+
+      <div id="tntln_logo">
+        <a href="/">
+        <div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
+        <span class="tntl">TNTL</span><span class="n">N</span>
+        </a>
+      </div>
+
+    	<h1 style="font-size:80px">THERE'S NO TIME LIKE <span class="n">NOW</span>.</h1>
     	<h5>( <font color="#FFBF00">Musings</font> by Virginia A.N. )</h5>
     		<br>
     		<hr>
@@ -37,8 +42,11 @@
     	<div id="posts">
     	  <ul>
     	  <% for(var i=0; i<posts.length; i++) {%>
-          <li id="post_<%= posts[i]._id %>">
-            <a href="/post/<%= posts[i]._id %>"><%= posts[i].title %></a>
+          <li id="post_<%= posts[i]._id %>" class="homepost">
+            <a href="/post/<%= posts[i]._id %>" class="title"><%= posts[i].title %></a>
+            <p id="content">
+              <%- posts[i].post.replace(/\r\n|\r|\n/g,"<br />") %>
+            </p>
             <% if (user) { %>
               <span class="delete" data-id="<%= posts[i]._id %>">&nbsp;&times;</span>
             <% } %>
