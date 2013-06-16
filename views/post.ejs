@@ -10,15 +10,13 @@
     <body>
       <header class="main"> 
       <a HREF="/about">About Me</a> | <a HREF="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!"> Your Thoughts</a> | <font size="4">©</font> 2013 
-      </header>     
-      <p>
-        <div>
-          <a href="/">
-            <img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1">
-        </div>
-        <font color="#424242">TNTL</font><font color="#FFBF00">N</font>
-          </a>
-       </p>
+      </header>
+      <div id="tntln_logo">
+        <a href="/">
+          <div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
+          <span class="tntl">TNTL</span><span class="n">N</span>
+        </a>
+      </div>
     
     <h1><%= data.title %>
       <% if (user) { %>
