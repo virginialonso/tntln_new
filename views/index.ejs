@@ -9,14 +9,14 @@
     </head>
     <body>
       <header class="main">
-        <table align="center">
-          <tr>
-            <td style="padding:10px; font-size: 20px"><a href="/about">Introducing Virginia</a></td>
-            <td style="padding:10px; font-size: 20px"><a href="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!"> Your Thoughts</a></td>
-            <td style="padding:10px; font-size: 20px"><a href="http://www.flickr.com/photos/virginialonso/">Flickr</a></td>
-            <td style="padding:10px; font-size: 20px"><a href="http://about.me/virginialonso">About.Me</td>         
-          </tr>
-        </table>
+        <div id="navbar">
+            <li><a href="/about">Introducing Virginia</a></li>
+            <li><a href="http://www.facebook.com/virginialonso">Facebook</a></li>
+            <li><a href="http://www.flickr.com/photos/virginialonso/">Flickr</a></li>
+            <li><a href="http://www.twitter.com/virginialonso/">Twitter</a></li>
+            <li><a href="http://about.me/virginialonso">About.Me</li>   
+            <li><a href="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!">Your Thoughts</a></li>    
+        </div>
       </header>
 
       <div id="tntln_logo">
@@ -26,8 +26,8 @@
         </a>
       </div>
 
-    	<h1 style="font-size:80px">THERE'S NO TIME LIKE <span class="n">NOW</span>.</h1>
-    	<h5>( <font color="#FFBF00">Musings</font> by Virginia A.N. )</h5>
+    	<h1 style="font-size:90px">THERE'S NO TIME LIKE <span class="n">NOW</span>.</h1>
+    	<h4>( Musings by Virginia A.N. )</h4>
     		<br>
     		<hr>
     	  <br>
@@ -48,7 +48,7 @@
             <span class="delete" data-id="<%= posts[i]._id %>">&nbsp;&times;</span>
             <% } %>
             <p id="content">
-              <%- posts[i].post.replace(/\r\n|\r|\n/g,"<br />") %>
+              <%- posts[i].post.replace(/\r\n|\r|\n/g,"<hr />") %>
             </p>
           </li>
         <% } %>
