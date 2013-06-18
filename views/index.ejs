@@ -26,7 +26,7 @@
         </a>
       </div>
 
-    	<h1 style="font-size:90px">THERE'S NO TIME LIKE <span class="n">NOW</span>.</h1>
+    	<h1 style="font-size:80px">THERE'S NO TIME LIKE <span class="n">NOW</span>.</h1>
     	<h4>( Musings by Virginia A.N. )</h4>
     		<br>
     		<hr>
@@ -48,7 +48,7 @@
             <span class="delete" data-id="<%= posts[i]._id %>">&nbsp;&times;</span>
             <% } %>
             <p id="content">
-              <%- posts[i].post.replace(/\r\n|\r|\n/g,"<hr />") %>
+              <%- posts[i].post.replace(/\r\n|\r|\n/g,"<br />") %>
             </p>
           </li>
         <% } %>
