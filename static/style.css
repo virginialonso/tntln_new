@@ -57,11 +57,16 @@ header.main a:hover {
   text-shadow: none;
 }
 #tntln_logo {
-    margin-top: 80px;
+    margin-top: 60px;
 }
 .main a {
     color: #000000;
     text-decoration: none;
+}
+.homepost .title {
+	font-size: 45px;
+	display: block;
+	margin-top: 50px;
 }
 li {
   list-style: none;
@@ -74,7 +79,7 @@ ul {
 }
 li a.title:before,
 li a.title:after {
-  content: "·";
+  content: ;
   margin: 0 5px;
   color: #666;
 }
