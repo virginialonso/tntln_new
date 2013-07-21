@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 if (!this.db) {
   // this.db = "mongodb://localhost/90io" || "mongodb://heroku:master@alex.mongohq.com:10039/app9239381";
-  this.db = process.env.MONGOHQ_URL || "mongodb://heroku:master@alex.mongohq.com:10039/app9239381";
+  this.db = process.env.MONGOHQ_URL || "mongodb://localhost/virginialonso";
   this.db = mongoose.connect(this.db);
 }
 
