@@ -2,9 +2,11 @@ body {
 	background: transparent url(/BG.png) no-repeat;
 	background-attachment: fixed;
 	color: rgb(41, 41, 41);
-	font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
-	text-align: center;
-	margin: 0 27%;	
+	font: 20px 'Source Sans Pro', sans-serif;
+  text-align: center;
+	margin: 0 auto;
+  margin-left: 13%;
+  margin-right: 13%;	
 	background-size: 100%;
 }
 a {
@@ -30,8 +32,12 @@ a:hover {
 hr {
   border-color: #A1A1A1;
   border-width: 1px;
+  margin-left: 0%;
+  margin-right: 2%;
+  margin-top: 40px;
 }
 header.main {
+  font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
   background-color: #FFBF00;
   border: 2px dashed #FFFFFF;
   width: 100%;
@@ -48,6 +54,7 @@ header.main {
   color:black;
 }
 #navbar li {
+  font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
   display: inline-block;
   margin: 0 20px;
 }
@@ -56,14 +63,15 @@ header.main a:hover {
   text-shadow: none;
 }
 #tntln_logo {
-    margin-top: 60px;
+    margin-top: 90px;
 }
 .main a {
     color: #000000;
     text-decoration: none;
 }
 .homepost .title {
-	font-size: 45px;
+	font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
+  font-size: 45px;
 	display: block;
 	margin-top: 50px;
 }
@@ -89,6 +97,7 @@ li a.title:after {
   padding: 20px 0;
 }
 #title {
+  font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -137,13 +146,14 @@ a {
 }
 .bg {
   top: 0;
-  right: 25%;
+  right: 12%;
+  left: 12%;
   position: fixed;
-  width: 50%;
+  width: 75%;
   height: 100%;
   background: #fff;
   z-index: -1;
-  opacity: 0.45;
+  opacity: 0.6;
   outline: 10px solid #fff;
   outline-offset: 10px;
 }
@@ -175,8 +185,19 @@ header.active a {
 }
 
 .tntl {
+   font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
    color: #424242;
 }
+
 .n {
+    font: 24px "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
     color: #FFBF00;
+}
+
+.now {
+    color: #FFBF00;
+}
+
+.maintitle {
+  font-family: "Amatic SC", "Coming Soon", "Helvetica Neue", "Helvetica";
 }
