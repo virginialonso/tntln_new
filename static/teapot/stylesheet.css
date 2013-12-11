@@ -1,0 +1,171 @@
+body {
+  font-family: 'Poiret One', cursive; 
+  text-align: center;
+  background: #fff;
+  background-position: right;
+  background-size: 50%; 
+}
+
+hr {
+  color: #f1c40f;
+}
+
+#maintitle {
+  font-family: 'Poiret One', cursive; 
+  font-size: 100px;
+  font-weight: lighter;
+  margin-top: 50px;
+  color: #000;
+}
+
+#subtitle {
+  font-family: 'Poiret One', cursive; 
+  font-size: 20px;
+  font-weight: lighter;
+  color: #000;
+}
+
+#mainpic {
+  background-color: #FFFFFF;
+  opacity: 0.5; 
+  border-radius: 50%;
+}
+
+#improvelives {
+  width: 100px;
+  height: 100px;
+  margin-left: 0;
+  margin-top: 30px;
+  border-radius: 25%;
+}
+
+#gray {
+  color: #f1c40f;
+}
+
+#red {
+  color: #FF3333;
+}
+
+#body {
+  font: 'Poiret One', cursive;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-top: 20px;
+  color: #000;
+  text-align: justify;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+.sectiontitle {
+  font-family: 'Poiret One', cursive;
+  color: #f1c40f;
+  font-size: 50px;
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+}
+.smallertitle {
+  font-family: 'Poiret One' ;
+  color: #FF3333;
+  font-size: 30px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.centered {
+  text-align: center;
+}
+
+#footer {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+header.main {
+  background-color: #fff;
+  font-family: 'Poiret One';
+  top: 0px;
+  position: fixed;
+  font-weight: 300;
+  /**border-bottom: 1px solid #efefef;**/
+  width: 100%;
+  height: 30px;
+  z-index: 999;
+}
+
+#navbar ul {
+  padding: 0;
+  margin: 0;
+}
+
+#navbar li {
+    font-size: 20px;
+    display: inline-block; 
+    margin: 0 3%;
+    color: #ff3333;
+    z-index: 1;
+}
+
+header.main a:hover {
+    color: #ff3333;
+    font-weight: 400;
+}
+
+header.main a {
+    color: #000;
+    text-decoration: none;
+}
+
+a {
+  color: #FF3333;
+  
+}
+
+a:hover {
+  text-decoration: none;
+  color: #f1c40f;
+}
+
+.mediumphoto {
+  height: 350px;
+  width: 480px;
+  margin: 0 auto;
+  display: inherit;
+}
+
+.mediumphotowide {
+  width: 60%;
+  margin: 0 auto;
+  display: inherit;
+}
+
+.smallphoto {
+  width:50%;
+}
+
+.largeA4, .bigphoto {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: inline-block;
+  text-align: center;
+}
+
+.quotemarksleft {
+  font-family: 'Georgia', cursive;
+  font-size: 50px;
+}
+.quotemarksright {
+  font-family: 'Georgia', cursive;
+  font-size: 50px;
+  text-align: right;
+}
