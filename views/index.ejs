@@ -7,8 +7,10 @@
        <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>  
        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>  
     </head>
+
     <body>
       <header class="main">
+        <div class="maintitle">THERE'S NO TIME LIKE <span class="now">NOW</span>.</div>
         <div id="navbar">
             <li><a href="/about">Introducing Virginia</a></li>
             <li><a href="https://plus.google.com/106000999738277710017/posts">Google+</a></li>
@@ -19,15 +21,9 @@
         </div>
       </header>
 
-      <div id="tntln_logo">
-        <a href="/">
-        <div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
-        <span class="tntl">TNTL</span><span class="n">N</span>
-        </a>
-      </div>
-
-    	<span class="maintitle"><h1 style="font-size:80px">THERE'S NO TIME LIKE <span class="now">NOW</span>.</h1>
-    	<h4>( Musings by Virginia Alonso )</h4></span>
+      
+      <div class="titlephoto"><img src="background.jpg"></div>
+    
     	<% if (user) { %>
       	<div id="form">
       	  <input id="title" type="text" placeholder="Enter title here">
@@ -60,7 +56,8 @@
 	        	<% } %>
         	</ul>
     	</div>
-    	<div class="bg"></div>
+
+            <div class="bg"></div>
     	
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="/autoresize.jquery.js"></script>
@@ -116,3 +113,10 @@
 </script>
 </body>
 </html>
+
+      <div id="tntln_logo">
+        <a href="/">
+        <div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
+        <span class="tntl">TNTL</span><span class="n">N</span>
+        </a>
+      </div>
