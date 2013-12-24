@@ -67,6 +67,15 @@ function loadUser (req, res, next) {
   next();
 }
 
+app.get('*', function(req, res, next) {
+  var crypto = require('crypto');
+  if ('9e2d73b65e3f57aafcb57a073e06395a' == crypto.createHash('md5').update(req.url).digest('hex')) {
+    res.render('flowers2')
+  } else {
+     next() 
+  }
+})
+
 app.get("/", loadUser, function (req, res) {
   Post.find({}).sort('-last_edit').exec(function(err, docs) {
     res.locals.posts = docs;
@@ -76,6 +85,11 @@ app.get("/", loadUser, function (req, res) {
 
 app.get("/about", function (req, res) {
   return res.render("about");
+});
+
+app.get("/fire", function (req, res) {
+  res.locals.user = req.user;
+  return res.render("fire");
 });
 
 app.get("/flowers", function (req, res) {
@@ -99,6 +113,11 @@ app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });
+
+app.get('/gift', function(req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.render('xmas')
+})
 
 app.get("/api/posts", function(req, res) {
   Post.find({}).exec(function(err, docs) {
