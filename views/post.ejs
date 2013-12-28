@@ -9,26 +9,19 @@
 
     <body>
       <header class="main">
+        <div class="maintitle">THERE'S NO TIME LIKE <span class="now">NOW</span>.</div>
         <div id="navbar">
-            <li><a href="/index">Home</a></li>
             <li><a href="/about">Introducing Virginia</a></li>
-            <li><a href="http://www.facebook.com/virginialonso">Facebook</a></li>
+            <li><a href="https://plus.google.com/106000999738277710017/posts">Google+</a></li>
             <li><a href="http://www.flickr.com/photos/virginialonso/">Flickr</a></li>
             <li><a href="http://www.twitter.com/virginialonso/">Twitter</a></li>
             <li><a href="http://about.me/virginialonso">About.Me</li>   
             <li><a href="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!">Your Thoughts</a></li>    
         </div>
-        <hr>
       </header>
 
-      <div id="tntln_logo">
-        <a href="/">
-        <div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
-        <span class="tntl">TNTL</span><span class="n">N</span>
-        </a>
-      </div>
     
-    <h1><%= data.title %>
+    <h1 class="blogpost"><%= data.title %>
       <% if (user) { %>
         <span class="delete" data-id="<%= data._id %>">&nbsp;&times;</span><a href="/edit/<%= data._id %>"> (edit)</a>
       <% } %>
@@ -39,9 +32,18 @@
     <p>
       <abbr title="<%- data.last_edit %>">[<%- data.fromNow %>]</abbr>
     </p>
+
+     <div id="tntln_logo">
+        <a href="/">
+        <div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
+        <span class="tntl">TNTL</span><span class="n">N</span>
+        </a>
+      </div>
     
     <div align="center"> ( Go <a style="color: #FFBF00" HREF="/">back </a>) </div>
     <div class="bg"></div>
+
+
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="/autoresize.jquery.js"></script>
 
