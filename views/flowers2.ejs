@@ -1,0 +1,81 @@
+<html ng-app="flowers">
+  <head><title>6.4023644e+36 flowers</title></head>
+  <link rel="stylesheet" href="app/slider.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <style type="text/css" media="screen">
+  body {
+    font-family: Helvetica;
+  }
+  svg {
+  width: 300px;
+  height: 300px;
+  }
+  path {
+  opacity: 0.7;
+  }
+  
+  #letters {
+    width: 60%;
+    margin: 0 auto;
+  }
+  #letters .letter {
+    display: inline-block;
+    margin: 10px 10px;
+    cursor: pointer;
+  }
+
+  #letters svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  #current .flower {
+    display: inline-block;
+  }
+  #current .flower svg {
+    width: 150px ;
+    height: 150px;
+  }
+  #flowers {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #input {
+    border: 0px;
+    border-bottom: 3px solid #EFEFEF;
+    font-size: 38px;
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    font-family: Helvetica;
+    font-weight: 200;
+    color: #666;
+    margin-bottom: 60px;
+  }
+  </style>
+<body>
+
+  <div id="current" ng-controller="CurrentCtrl">
+    <div ng-controller="LettersCtrl" id="letters">
+      <div ng-repeat="letter in letters" class="letter" flower="word" ng-init="word = [letter]" h="'#000000'" ng-click="trigger(letter)"></div>
+    </div>
+    
+    {{abc}}
+
+    <input id="input" type="text" ng-model="current" ng-init="current = 'merry christmas and happy new year'">
+    
+    <div id="flowers">
+      <div class="flower" ng-repeat="flower in flowers">
+        <div flower="flower" h="$index" downpart=1></div>
+        <!-- <section class="clearfix colorselector"><div hue-slider></div></section> -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script type="text/javascript" charset="utf-8" src="bower_components/jquery/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="bower_components/nouislider/jquery.nouislider.js"></script> -->
+    <script type="text/javascript" charset="utf-8" src="bower_components/tinycolor/dist/tinycolor-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="app/color-scheme.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" charset="utf-8" src="app/flowers.js"></script>
+</body>
+</html>

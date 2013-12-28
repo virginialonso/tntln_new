@@ -1,0 +1,19 @@
+{
+  "name": "tinycolor",
+  "version": "0.9.16",
+  "main": [
+    "./tinycolor.js"
+  ],
+  "dependencies": {},
+  "homepage": "https://github.com/bgrins/TinyColor",
+  "_release": "0.9.16",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.9.16",
+    "commit": "bcb1e19a55632c93b0e85d9bda69a29669af4d0c"
+  },
+  "_source": "git://github.com/bgrins/TinyColor.git",
+  "_target": "~0.9.16",
+  "_originalSource": "tinycolor",
+  "_direct": true
+}
