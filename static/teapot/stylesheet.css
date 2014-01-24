@@ -150,7 +150,17 @@ a:hover {
 }
 
 .smallphoto {
-  width:50%;
+  width: 50%;
+}
+
+.verysmallphoto {
+  width: 35%;
+  margin-top: 25px;
+}
+.verysmallphotocenter {
+  width: 35%;
+  margin: 0 auto;
+  display: inherit;
 }
 
 .largeA4, .bigphoto {
