@@ -8,17 +8,20 @@
     </head>
 
     <body>
-      <header class="main">
-        <div class="maintitle">THERE'S NO TIME LIKE <span class="now">NOW</span>.</div>
-        <div id="navbar">
-            <li><a href="/about">Introducing Virginia</a></li>
-            <li><a href="https://plus.google.com/106000999738277710017/posts">Google+</a></li>
-            <li><a href="http://www.flickr.com/photos/virginialonso/">Flickr</a></li>
-            <li><a href="http://www.twitter.com/virginialonso/">Twitter</a></li>
-            <li><a href="http://about.me/virginialonso">About.Me</li>   
-            <li><a href="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!">Your Thoughts</a></li>    
-        </div>
-      </header>
+	    <div id="header" class="centered">
+	    	<header class="main container-fluid"> 
+	          <div id="navbar" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	          	<ul>
+            	 <li><a href="/index"><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></a></li>
+				 <li><a href="/about">Introducing Virginia</a></li>
+            	 <li><a href="https://plus.google.com/106000999738277710017/posts">Google+</a></li>
+            	 <li><a href="http://www.flickr.com/photos/virginialonso/">Flickr</a></li>
+            	 <li><a href="http://www.twitter.com/virginialonso/">Twitter</a></li> 
+				 <li><a href="http://www.slideshare.net/virginialonso">SlideShare</li>
+            	 <li><a href="mailto:virginia.alonsonavarro@gmail.com?Subject=Hello!">Your Thoughts</a></li> 
+	          </div>
+	      </header>
+	    </div>
 
     
     <h1 class="blogpost"><%= data.title %>
@@ -32,15 +35,8 @@
     <p>
       <abbr title="<%- data.last_edit %>">[<%- data.fromNow %>]</abbr>
     </p>
-
-     <div id="tntln_logo">
-        <a href="/">
-        <div><img src="http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc6/215520_10150215695701253_2755497_n.jpg" class="logo1"></div>
-        <span class="tntl">TNTL</span><span class="n">N</span>
-        </a>
-      </div>
     
-    <div align="center"> ( Go <a style="color: #FFBF00" HREF="/">back </a>) </div>
+    <div align="center"> Go <a style="color: #FFBF00" HREF="/">back </a> </div>
     <div class="bg"></div>
 
 
